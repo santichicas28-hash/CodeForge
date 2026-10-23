@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - CodeForge</title>
+  <!-- Fuente Poppins para mantener la estética -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root{
+      --brand-blue: #0b2545;      /* Azul oscuro CodeForge */
+      --brand-blue-2: #134074;    /* Azul secundario */
+      --apple-blue: #0b2545;      /* Azul brillante para botones */
+      --bg: #f8fafc;
+      --muted: #64748b;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ==========================
+        MODAL CONTACTO CODEFORGE
+    ========================== */
+    .contacto-modal{
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 37, 69, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+      overflow-y: auto; /* Permite hacer scroll vertical en la pantalla */
+    }
+    .contacto-modal.active{ display: flex; }
+
+    .contacto-content{
+      width: 100%;
+      max-width: 850px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 35px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(11, 37, 69, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+      animation: applePop 0.25s ease;
+      margin: auto; /* Centra el modal vertical y horizontalmente */
+    }
+
+    @keyframes applePop {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Cabecera del Modal con Logo */
+    .modal-header-brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 15px;
+    }
+
+    .modal-logo {
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .contacto-content h2{
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin: 0 0 4px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .contacto-content .sub{
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    /* CONTENEDOR DE TARJETAS CENTRADO */
+    .team-grid{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .team-card{
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      border: 1px solid #edf2f7;
+      transition: 0.25s ease;
+      width: 260px;
+      flex: 1 1 260px;
+      max-width: 320px;
+    }
+
+    .team-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(19, 64, 116, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .team-card img{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--apple-blue);
+      background: #f1f5f9;
+      margin-bottom: 12px;
+    }
+
+    .team-card h3{
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-blue);
+      margin-bottom: 4px;
+    }
+
+    .team-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .team-card p b {
+      color: var(--brand-blue-2);
+    }
+
+    .contact-actions{
+      margin-top: 25px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wa-btn{
+      background: var(--apple-blue);
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,122,255,0.25);
+      transition: 0.2s;
+    }
+    .wa-btn:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .phone{
+      margin: 0;
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: none;
+      background: #f1f5f9;
+      color: var(--brand-blue);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .close-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* BOTÓN DE REGRESO */
+    .btn-regreso {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 25px;
+      padding: 12px 22px;
+      background: #ffffff;
+      color: #12679b;
+      border: 1px solid #dce5ec;
+      border-radius: 10px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(16, 43, 68, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .btn-regreso:hover {
+      background: #12679b;
+      color: #ffffff;
+      border-color: #12679b;
+      transform: translateX(-4px);
+      box-shadow: 0 8px 20px rgba(18, 103, 155, 0.20);
+    }
+
+    .btn-regreso:focus-visible {
+      outline: 3px solid #68E6F4;
+      outline-offset: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MODAL CONTACTO CODEFORGE -->
+  <div class="contacto-modal active" id="contactoModal">
+    <div class="contacto-content">
+
+      <div class="modal-header-brand">
+        <div>
+          <h2>Contacto</h2>
+          <p class="sub">Descubre la magia detrás de CodeForge</p>
+        </div>
+        <div>
+          <a href="index.html" class="btn-regreso">
+            ← Volver a CodeForge
+          </a>
+        </div>
+        <img src="img/CodeForge-logo.png" alt="CodeForge" class="modal-logo" onerror="this.style.display='none'">
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="img/danisex.jpeg" alt="Daniel Lopez">
+          <h2>Daniel López</h2>
+          <h3>@dansvchh</h3><br>
+          <p><b>Jefe de Innovación y Optimización</b></p>
+          <p>Encargado de mejorar la velocidad, la seguridad y el rendimiento de los sitios web, además de proponer nuevas herramientas y tecnologías para optimizar los proyectos de CodeForge.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="img/edu.jpeg" alt="Santiago Chicas">
+          <h2>Santiago Chicas</h2>
+          <h3>@santii_em</h3><br>
+          <p><b>Jefe de Desarrollo</b><br><b>Web</b></p>
+          <p>Encargado de dirigir la creación de los sitios web, organizar las tareas de programación y supervisar el uso de HTML, CSS y JavaScript.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="img/didi.jpeg" alt="Emilio Centeno">
+          <h2>Emilio Centeno</h2>
+          <h3>@milooq_</h3><br>
+          <p><b>Jefe de Calidad</b><br><b>y Pruebas</b></p>
+          <p>Gestiona el funcionamiento de los sitios web, detecta errores y comproba que las páginas se visualicen correctamente en celulares y computadoras.</p>
+        </div>
+        
+        <div class="team-card">
+          <img src="img/pisa.jpeg" alt="Oscar Valladares">
+          <h2>Alejandro Valladares</h2>
+          <h3>@alejx.44</h3><br>
+          <p><b>Jefe de Proyecto</b><br><b>Web</b></p>
+          <p>Responsable de planificar y coordinar el desarrollo de los sitios web, distribuir las tareas entre los integrantes del equipo, supervisar el cumplimiento de los plazos y verificar que cada proyecto cumpla con los objetivos y requisitos establecidos por el cliente.</p>
+        </div>
+
+        <div class="team-card">
+          <img src="img/ogo.jpeg" alt="Rodrigo Reyes">
+          <h2>Rodrigo Reyes</h2>
+          <h3>@rod_.oa</h3><br>
+          <p><b>Jefe de Análisis</b><br><b>y Estructura</b></p>
+          <p>Encargado de analizar las necesidades de cada cliente, definir los requisitos del sitio web y organizar su estructura, estableciendo las secciones, funcionalidades y contenido necesarios para garantizar un desarrollo ordenado y eficiente.</p>
+        </div>
+      </div>
+
+      <div class="contact-actions">
+        <a class="wa-btn" href="https://wa.me/50374895108" target="_blank">
+          💬 Escribir por WhatsApp
+        </a>
+        <p class="phone">Tel: +503 6978 0409</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("contactoModal");
+    const cerrar = document.getElementById("closeContacto");
+
+    // Cerrar el modal al hacer clic en la X (si el botón existe)
+    if (cerrar) {
+      cerrar.addEventListener("click", () => {
+          modal.classList.remove("active");
+      });
+    }
+  </script>
+</body>
+</html>

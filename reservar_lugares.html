@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecciona tus Destinos - SV travel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #111827, #1f2937);
+      color: #fff;
+      padding-bottom: 90px;
+    }
+    .btn-regresar {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px 15px;
+      background: #ff9800;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+      z-index: 100;
+    }
+    .btn-regresar:hover { background: #e65100; }
+
+    .titulo {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #ffeb3b;
+      padding: 0 15px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+
+    .seccion-titulo {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 1.6em;
+      color: #00c6ff;
+      border-bottom: 2px solid #00c6ff;
+      max-width: 1000px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-bottom: 5px;
+    }
+
+    @media(min-width: 1040px) {
+      .seccion-titulo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      background: #374151;
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: scale(1.03); }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card .contenido {
+      padding: 15px;
+    }
+
+    .card .nombre {
+      font-weight: bold;
+      color: #ffeb3b;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .card label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 12px;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .card label:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .card input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .barramenus-flotante {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+
+    .btn-reserva-ya {
+      padding: 12px 35px;
+      font-size: 1.2em;
+      background: #4caf50;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-reserva-ya:hover {
+      background: #388e3c;
+      transform: scale(1.05);
+    }
+
+    /* Media Queries para Adaptar las Tarjetas en Celulares y Tablets */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .titulo {
+        font-size: 1.8em;
+        margin-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="pagina_principal.html" class="btn-regresar">Regresar</a>
+
+  <div class="titulo">Selecciona los destinos que deseas visitar</div>
+
+  <!-- ZONAS DE SOL Y PLAYA -->
+  <div class="seccion-titulo">Zonas de Sol y Playa</div>
+  <div class="grid">
+    <div class="card">
+      <img src="1costa del sol playa  FAVAustinTX.jpg" alt="Costa del Sol">
+      <div class="contenido">
+        <div class="nombre">Costa del Sol</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="8348029129_70781cb1f6_b.jpg" alt="Playa El Tunco">
+      <div class="contenido">
+        <div class="nombre">Playa El Tunco</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="cuco-03.jpg" alt="Playa El Cuco">
+      <div class="contenido">
+        <div class="nombre">Playa El Cuco</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="WhatsApp-Image-2024-01-21-at-10.08.28-AM.jpeg" alt="Playa Los Cóbanos">
+      <div class="contenido">
+        <div class="nombre">Playa Los Cóbanos</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="a665dbd49a9f43f7761c6f58d49ed81d.jpg" alt="Barra de Santiago">
+      <div class="contenido">
+        <div class="nombre">Barra de Santiago</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="PLAYA-SAN-DIEGO-Playas-de-El-Salvador.jpg" alt="Playa San Diego">
+      <div class="contenido">
+        <div class="nombre">Playa San Diego</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONAS DE MONTAÑA -->
+  <div class="seccion-titulo" style="color: #8bc34a; border-color: #8bc34a;">Zonas de Montaña</div>
+  <div class="grid">
+    <div class="card">
+      <img src="R (2).jpg" alt="Cerro El Pital">
+      <div class="contenido">
+        <div class="nombre">Cerro El Pital</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="CerroVerde1.jpg" alt="Cerro Verde">
+      <div class="contenido">
+        <div class="nombre">Cerro Verde</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="OIP.webp" alt="Volcán de Santa Ana">
+      <div class="contenido">
+        <div class="nombre">Volcán de Santa Ana</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="maxresdefault.jpg" alt="Peña Blanca">
+      <div class="contenido">
+        <div class="nombre">Peña Blanca</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="R (3).jpg" alt="La Palma">
+      <div class="contenido">
+        <div class="nombre">La Palma</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="apaneca-01.jpg" alt="Mirador de Apaneca">
+      <div class="contenido">
+        <div class="nombre">Mirador de Apaneca</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONAS URBANAS -->
+  <div class="seccion-titulo" style="color: #ffd700; border-color: #ffd700;">Zonas Urbanas</div>
+  <div class="grid">
+    <div class="card">
+      <img src="EL_Salvador_San_Salvador_centro.jpg" alt="Centro Histórico">
+      <div class="contenido">
+        <div class="nombre">Centro Histórico</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="pfutura.webp" alt="Plaza Futura">
+      <div class="contenido">
+        <div class="nombre">Plaza Futura</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="R.jpg" alt="Multiplaza">
+      <div class="contenido">
+        <div class="nombre">Multiplaza</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="R (1).jpg" alt="Museo de Arte MARTE">
+      <div class="contenido">
+        <div class="nombre">Museo de Arte MARTE</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="BINAES-1.jpg" alt="Biblioteca Nacional">
+      <div class="contenido">
+        <div class="nombre">Biblioteca Nacional (BINAES)</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+    <div class="card">
+      <img src="b6fa7199fee207e3d322416c04bb6922.png" alt="Parque Cuscatlán">
+      <div class="contenido">
+        <div class="nombre">Parque Cuscatlán</div>
+        <label><input type="checkbox" class="lugar-check"> Seleccionar lugar</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="barramenus-flotante">
+    <button class="btn-reserva-ya" onclick="validarYContinuar()">¡Reserva ya!</button>
+  </div>
+
+  <script>
+    function validarYContinuar() {
+      const checkboxes = document.querySelectorAll('.lugar-check');
+      let seleccionado = false;
+      checkboxes.forEach(cb => {
+        if (cb.checked) seleccionado = true;
+      });
+
+      if (!seleccionado) {
+        alert('Por favor selecciona al menos un lugar para continuar con tu reserva.');
+      } else {
+        window.location.href = 'informacion_para_reservar.html';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservaciones | Salazar Barbershop</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Salazar Barbershop, inicio"
+      >
+        <span class="brand-mark">SLZ</span
+        ><span class="brand-name">SALAZAR <b>BARBERSHOP</b></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a class="active" href="index.html">Inicio</a
+        ><a href="servicios.html">Servicios</a
+        ><a href="nosotros.html">Nosotros</a
+        ><a class="nav-cta" href="reservaciones.html">Reservar cita</a>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero booking-page-hero">
+        <div class="container">
+          <p class="eyebrow"><span></span> HAGAMOS ESPACIO PARA TU ESTILO</p>
+          <h1>Reserva tu<br /><em>próxima cita.</em></h1>
+          <p>
+            Completa el formulario con tus datos y el servicio que deseas. ¡Será
+            un gusto atenderte!
+          </p>
+        </div>
+      </section>
+      <section class="section container booking-layout">
+        <div class="booking-info">
+          <div class="section-label">01 / INFORMACIÓN</div>
+          <h2>Tu visita<br />comienza <em>aquí.</em></h2>
+          <p></p>
+          <div class="info-row">
+            <span class="info-icon">◷</span>
+            <div>
+              <b>Horario </b>
+              <p>Martes a domingo · 9:00 a. m. - 8:00 p. m.</p>
+              <p>Lunes · Cerrado</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">⌖</span>
+            <div>
+              <b>Ubicación</b>
+              <p> Residencial Bosques de la Paz, Calle 20 Poniente, Casa 7</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">✂</span>
+            <div>
+              <b>Atención</b>
+              <p>Atención con cita previa</p>
+            </div>
+          </div>
+        </div>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-heading">
+            <span>FORMULARIO DE RESERVA</span
+            ><span class="form-step">SLZ</span>
+          </div>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="nombre">Nombre completo *</label
+              ><input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Escribe tu nombre"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <label for="telefono">Teléfono *</label
+              ><input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="0000-0000"
+                pattern="[0-9+() -]{8,}"
+                maxlength="9"
+                required
+              />
+            </div>
+            <div class="form-field full">
+              <label for="servicio">Servicio deseado *</label
+              ><select id="servicio" name="servicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option>Corte normal — $4.00</option>
+                <option>Corte con navaja — $5.00</option>
+                <option>Cejas y barba — $1.00</option>
+                <option>Corte normal + mascarilla facial — $5.00</option>
+                <option>Corte con navaja + mascarilla facial + cejas — $6.00</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="fecha">Fecha preferida *</label
+              ><input type="date" id="fecha" name="fecha" required />
+            </div>
+            <div class="form-field">
+              <label for="hora">Hora preferida *</label
+              ><select id="hora" name="hora" required>
+                <option value="">Selecciona la hora</option>
+                <option>9:00 a. m.</option>
+                <option>10:00 a. m.</option>
+                <option>11:00 a. m.</option>
+                <option>12:00 p. m.</option>
+                <option>1:00 p. m.</option>
+                <option>2:00 p. m.</option>
+                <option>3:00 p. m.</option>
+                <option>4:00 p. m.</option>
+                <option>5:00 p. m.</option>
+                <option>6:00 p. m.</option>
+                <option>7:00 p. m.</option>
+              </select>
+            </div>
+          </div>
+          <label class="check-field"
+            ><input type="checkbox" required />
+            <span>Confirmo que los datos ingresados son correctos.</span></label
+          >
+          <button class="btn btn-gold submit-btn" type="submit">
+            Solicitar reserva <span>↗</span>
+          </button>
+          <div
+            class="success-message"
+            id="successMessage"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">SLZ</span
+          ><span class="brand-name">SALAZAR <b>BARBERSHOP</b></span></a
+        >
+        <p>Tu estilo, nuestra pasión.</p>
+        <p>ig: @salazar_barbershp</p>
+        <p>7876 - 1554</p>
+        <p class="copyright">SALAZAR BARBERSHOP</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

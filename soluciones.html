@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones503</title>
+
+  <!-- Tipografía + Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/tip2.png">
+
+  <!-- CSS ÚNICO (EL BUENO) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("sLgi2ZRSGFa73DpFR");
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- MODAL COTIZAR -->
+  <div class="cotizar-modal" id="cotizarModal">
+    <div class="cotizar-content">
+      <button class="close-btn" id="closeCotizar">✕</button>
+      <h2>Cotizar</h2>
+      <p id="serviceSelected" style="margin-bottom:12px; font-weight:600;"></p>
+
+      <form id="cotizarForm">
+        <label>Nombre</label>
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+        <label>Teléfono</label>
+        <input type="tel" id="telefono" placeholder="0000-0000" required>
+
+        <label>Servicio</label>
+        <input type="text" id="serviceInput" readonly>
+
+        <label>Dirección del domicilio</label>
+        <textarea id="direccion" rows="2" placeholder="Bosques de la paz..." required></textarea>
+
+        <label>Detalles</label>
+        <textarea id="detalles" rows="4" placeholder="Contanos qué necesitás..." required></textarea>
+
+        <button type="submit" class="send-btn">Enviar solicitud</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <img src="img/Logo.png" alt="Logo Soluciones">
+
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#" id="btnContacto">Contacto</a>
+      <a href="#blog">Blog</a>
+    </nav>
+
+    <div class="header-socials">
+      <a href="https://www.facebook.com/profile.php?id=61569511366889&locale=es_LA" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/soluciones.503/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@soluciones.503?_r=1&_t=ZM-91eEal8Mb2u" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    </div> 
+
+    <div class="nav-arrow">
+  <i class="fa-solid fa-chevron-right"></i>
+</div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Bienvenido a Soluciones</h2>
+      <p>
+        Servicios eficientes y modernos para tu proyecto. 
+        Tu idea, hecha realidad con acabados profesionales.
+      </p>
+      <button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">
+        Ver servicios
+      </button>
+      <button class="hero-btn" onclick="window.location.href='#proyectos'">
+        Proyectos
+      </button>
+    </div>
+
+    <div class="hero-right">
+      <img src="img/img2.png" alt="Trabajo Soluciones">
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services-section" id="servicios">
+    <div class="services-image">
+      <img src="img/img1.jpg" alt="Servicios Soluciones">
+    </div>
+
+
+    <div class="services-list">
+      <h2>NUESTROS SERVICIOS</h2>
+      <div class="service-group">
+        <ul>
+          <li data-service="Albañilería">
+            <span class="serv-icon"><img src="img/albanileria.png" alt=""></span>
+            Albañilería
+          </li>
+
+          <li data-service="Cielos y Techos">
+            <span class="serv-icon"><img src="img/techos.png" alt=""></span>
+            Cielos y Techos
+          </li>
+
+          <li data-service="Pintura">
+            <span class="serv-icon"><img src="img/pintura.png" alt=""></span>
+            Pintura
+          </li>
+
+          <li data-service="Mantenimiento Técnico">
+            <span class="serv-icon"><img src="img/mantenimieto.png" alt=""></span>
+            Mantenimiento Técnico
+          </li>
+
+          <li data-service="Servicios Eléctricos">
+            <span class="serv-icon"><img src="img/electricidad .png" alt=""></span>
+            Servicios Eléctricos
+          </li>
+
+          <li data-service="Fontanería">
+            <span class="serv-icon"><img src="img/fontaneria.png" alt=""></span>
+            Fontanería
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="services-corner-logo">
+      <img src="img/Logo.png" alt="Soluciones">
+    </div>
+  </section>
+
+  <!-- MODAL CONTACTO -->
+  <div class="contacto-modal" id="contactoModal">
+    <div class="contacto-content">
+      <button class="close-btn" id="closeContacto">✕</button>
+
+      <h2>Contacto</h2>
+      <p class="sub">Conocé al equipo detrás de Soluciones</p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="img/Fer.png" alt="Fernando Muñoz">
+          <h3>Fernando Muñoz</h3>
+          <p><b>Cofundador & Director de Operaciones y logistica</b></p>
+          <p>
+           Supervisa los proyectos en terreno, coordina al equipo técnico y asegura que cada trabajo
+            se ejecute con calidad, orden y eficiencia.
+
+
+          </p>
+        </div>
+
+        <div class="team-card">
+          <img src="img/saul.png" alt="Herber">
+          <h3>Saul Perez</h3>
+          <p><b>Cofundador, Director administrativo & Marketing</b></p>
+          <p>
+            Gestiona la parte administrativa y comercial, optimiza la atención al cliente y 
+            dirige la estrategia de marca y crecimiento de Soluciones.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-actions">
+        <a class="wa-btn" href="https://wa.me/50374895108" target="_blank">
+          Escribir por WhatsApp
+        </a>
+        <p class="phone">📞 Tel: +503 7489 5108</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROYECTOS -->
+  <section class="projects-section" id="proyectos">
+    <div class="projects-head">
+      <h2>PROYECTOS RECIENTES</h2>
+      <p>Mirá algunos trabajos reales hechos por el equipo de Soluciones.</p>
+    </div>
+
+    <div class="projects-slider-wrap">
+      <button class="slider-arrow left" aria-label="Anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="projects-slider" id="projectsSlider">
+        <article class="project-card">
+          <div class="project-img">
+            <img src="img/marsella2.png">
+          </div>
+          <div class="card-proyecto">
+            <h3>Remodelación Marsella 2</h3>
+            <p>Repello, cerámica, estructura metálica y pintura completa.</p>
+            <button class="btn-detalles">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="img/soldadura.jpeg">
+          </div>
+          <div class="card-proyecto">
+            <h3>Trabajos de soldadura</h3>
+            <p>Hacemos que el acero trabaje para vos.
+              Soldaduras firmes, exactas y listas para cualquier reto.</p>
+            <button class="btn-detalles">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="img/cielofalso.jpeg">
+          </div>
+          <div class="card-proyecto">
+            <h3>Techo + Cielo Falso</h3>
+            <p>Estructura metálica, entechado y cielo PVC moderno.</p>
+            <button class="btn-detalles">Ver detalles</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img">
+            <img src="img/paint.jpeg">
+          </div>
+          <div class="card-proyecto">
+            <h3>Pintura Exterior</h3>
+            <p>Preparación de superficie + pintura premium.</p>
+            <button class="btn-detalles">Ver detalles</button>
+          </div>
+        </article>
+      </div>
+
+      <button class="slider-arrow right" aria-label="Siguiente">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- BLOG (sin inline pesado) -->
+  <section id="blog" class="blog-section">
+    <div class="blog-head">
+      <h2>BLOG</h2>
+      <p>Conoce un poco de nuestra historia, el inicio de soluciones.</p>
+    </div>
+
+   <section class="blog-section">
+
+  <!-- 🔵 HISTORIA -->
+  <div class="blog-card">
+    <h3>Historia</h3>
+    <p>
+      Un emprendedor graduado de EMCA inició su carrera en ventas, donde descubrió su interés por el mundo empresarial.
+      Gracias a una beca estudió Negocios Internacionales en China, donde vio lo fácil que era acceder a servicios
+      profesionales desde aplicaciones móviles. Al volver a El Salvador decidió crear un proyecto que conectara de manera
+      formal y segura a profesionales con clientes.  
+      <br><br>
+      Junto a Fernando Muñoz, también graduado del Ricaldone, inició una propuesta inspirada en la necesidad real de
+      modernizar el acceso a servicios técnicos en el país.
+    </p>
+  </div>
+
+  <!-- 🔵 VISIÓN -->
+  <div class="blog-card">
+    <h3>Visión</h3>
+    <p>
+      Convertirnos en la empresa líder de servicios profesionales en El Salvador, ofreciendo soluciones modernas, seguras
+      y confiables para todos.
+    </p>
+  </div>
+
+  <!-- 🔵 MISIÓN -->
+  <div class="blog-card">
+    <h3>Misión</h3>
+    <p>
+      Contribuir al desarrollo de El Salvador facilitando el acceso a servicios técnicos confiables, seguros y
+      profesionalizados.
+    </p>
+  </div>
+
+  <!-- 🔵 PÚBLICO OBJETIVO -->
+  <div class="blog-card">
+    <h3>Público Objetivo</h3>
+    <p>
+      Personas mayores y familias que buscan un servicio de calidad en la zona de San Salvador Este y alrededores.
+    </p>
+  </div>
+
+</section>
+
+  
+  
+  </section>
+
+  <footer>
+    © 2025 - Soluciones
+  </footer>
+
+  <!-- IMask primero -->
+<script src="https://unpkg.com/imask"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =========================
+     HEADER GLASS AL SCROLL
+  ========================= */
+  const headerEl = document.querySelector("header");
+
+  function toggleHeaderGlass(){
+    if (!headerEl) return;
+    if (window.scrollY > 10){
+      headerEl.classList.add("scrolled");
+    } else {
+      headerEl.classList.remove("scrolled");
+    }
+  }
+
+  // ✅ ejecutar al cargar
+  toggleHeaderGlass();
+  // ✅ ejecutar al scrollear (mejor para móvil)
+  window.addEventListener("scroll", toggleHeaderGlass, { passive: true });
+
+
+  /* =========================
+     COTIZAR MODAL + EMAILJS
+  ========================= */
+  const cards = document.querySelectorAll("[data-service]");
+  const cotizarModal = document.getElementById("cotizarModal");
+  const closeCotizar = document.getElementById("closeCotizar");
+  const serviceInput = document.getElementById("serviceInput");
+  const serviceSelected = document.getElementById("serviceSelected");
+  const cotizarForm = document.getElementById("cotizarForm");
+
+  let servicioHidden = document.getElementById("servicioSeleccionado");
+  if (!servicioHidden) {
+    servicioHidden = document.createElement("input");
+    servicioHidden.type = "hidden";
+    servicioHidden.id = "servicioSeleccionado";
+    cotizarForm.appendChild(servicioHidden);
+  }
+
+  const phoneEl = document.getElementById("telefono");
+  const nameEl  = document.getElementById("nombre");
+
+  const phoneMask = IMask(phoneEl, { mask: "0000-0000" });
+  const nameMask  = IMask(nameEl,  { mask: /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]*$/ });
+
+  function limpiarCotizar() {
+    cotizarForm.reset();
+    serviceInput.value = "";
+    serviceSelected.textContent = "";
+    servicioHidden.value = "";
+    phoneMask.value = "";
+    nameMask.value = "";
+  }
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const service = card.getAttribute("data-service") || "";
+      serviceInput.value = service;
+      servicioHidden.value = service;
+      serviceSelected.textContent = "Servicio seleccionado: " + service;
+      cotizarModal.classList.add("active");
+    });
+  });
+
+  closeCotizar.addEventListener("click", () => {
+    cotizarModal.classList.remove("active");
+    limpiarCotizar();
+  });
+
+  cotizarModal.addEventListener("click", (e) => {
+    if (e.target === cotizarModal) {
+      cotizarModal.classList.remove("active");
+      limpiarCotizar();
+    }
+  });
+
+  cotizarForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = {
+      nombre: nameEl.value.trim(),
+      telefono: phoneEl.value.trim(),
+      direccion: document.getElementById("direccion").value.trim(),
+      detalles: document.getElementById("detalles").value.trim(),
+      servicio: servicioHidden.value.trim()
+    };
+
+    emailjs.send("service_w82cywe", "template_3e1t788", data)
+      .then(() => {
+        alert("✅ Solicitud enviada correctamente 🚀");
+        cotizarModal.classList.remove("active");
+        limpiarCotizar();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        alert("❌ Error al enviar. Revisá consola (F12).");
+      });
+  });
+
+
+  /* =========================
+     CONTACTO MODAL
+  ========================= */
+  const btnContacto = document.getElementById("btnContacto");
+  const contactoModal = document.getElementById("contactoModal");
+  const closeContacto = document.getElementById("closeContacto");
+
+  btnContacto.addEventListener("click", (e) => {
+    e.preventDefault();
+    contactoModal.classList.add("active");
+  });
+
+  closeContacto.addEventListener("click", () => {
+    contactoModal.classList.remove("active");
+  });
+
+  contactoModal.addEventListener("click", (e) => {
+    if (e.target === contactoModal) {
+      contactoModal.classList.remove("active");
+    }
+  });
+
+
+  /* =========================
+     SLIDER PROYECTOS
+  ========================= */
+  const slider = document.getElementById("projectsSlider");
+  const btnLeft = document.querySelector(".slider-arrow.left");
+  const btnRight = document.querySelector(".slider-arrow.right");
+
+  if (slider && btnLeft && btnRight) {
+    btnLeft.addEventListener("click", () => {
+      slider.scrollBy({ left: -340, behavior: "smooth" });
+    });
+
+    btnRight.addEventListener("click", () => {
+      slider.scrollBy({ left: 340, behavior: "smooth" });
+    });
+  }
+
+});
+</script>

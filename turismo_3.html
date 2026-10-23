@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zonas Urbanas - SV travel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #212121, #424242); 
+      color: #fff;
+      padding-bottom: 40px;
+    }
+    .btn-regresar {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px 15px;
+      background: #b8860b; 
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: background 0.3s;
+      z-index: 100;
+    }
+    .btn-regresar:hover { background: #daa520; }
+
+    .titulo {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #f5f5f5;
+      padding: 0 15px;
+      text-shadow: 2px 2px 8px rgba(255,215,0,0.6); 
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+      background: #2c2c2c;
+    }
+    .card:hover { transform: scale(1.03); }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 4px solid #ffd700; 
+    }
+
+    .card .nombre {
+      text-align: center;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(255,255,255,0.1);
+      color: #ffd700;
+      font-size: 1.2em;
+    }
+
+    .card .info {
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      text-align: left;
+      padding: 0 15px;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      font-size: 0.95em;
+    }
+    .card:hover .info {
+      max-height: 300px;
+      padding: 15px;
+    }
+
+    .btn-reservar {
+      display: block;
+      margin-top: 10px;
+      padding: 8px;
+      background: #ffd700;
+      color: #212121;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .btn-reservar:hover {
+      background: #ffc107;
+    }
+
+    /* Adaptación para pantallas móviles */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .titulo {
+        font-size: 1.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="pagina_principal.html" class="btn-regresar">Regresar</a>
+
+  <div class="titulo">Bienvenidos a la zona urbana</div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="EL_Salvador_San_Salvador_centro.jpg" alt="Centro Histórico">
+      <div class="nombre">Centro Histórico</div>
+      <div class="info">
+        - Ubicación: San Salvador <br>
+        - Atractivo: Catedral Metropolitana <br>
+        - Actividades: recorridos culturales <br>
+        - Ambiente: arquitectura colonial <br>
+        - Servicios: museos y plazas
+        <a href="ipr_tu.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="pfutura.webp" alt="Plaza Futura">
+      <div class="nombre">Plaza Futura</div>
+      <div class="info">
+        - Ubicación: San Salvador <br>
+        - Ambiente: moderno y empresarial <br>
+        - Actividades: gastronomía y negocios <br>
+        - Atractivo: torres y restaurantes <br>
+        - Servicios: hoteles cercanos
+        <a href="ipr_tu.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="R.jpg" alt="Multiplaza">
+      <div class="nombre">Multiplaza</div>
+      <div class="info">
+        - Ubicación: Antiguo Cuscatlán <br>
+        - Tipo: centro comercial <br>
+        - Actividades: compras y entretenimiento <br>
+        - Atractivo: tiendas internacionales <br>
+        - Servicios: cine y restaurantes
+        <a href="ipr_tu.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="R (1).jpg" alt="Museo de Arte MARTE">
+      <div class="nombre">Museo de Arte MARTE</div>
+      <div class="info">
+        - Ubicación: San Salvador <br>
+        - Tipo: museo de arte moderno <br>
+        - Actividades: exposiciones y talleres <br>
+        - Atractivo: colecciones nacionales e internacionales <br>
+        - Servicios: visitas guiadas
+        <a href="ipr_tu.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="BINAES-1.jpg" alt="Biblioteca Nacional">
+      <div class="nombre">Biblioteca Nacional (BINAES)</div>
+      <div class="info">
+        - Ubicación: San Salvador <br>
+        - Tipo: biblioteca moderna <br>
+        - Atractivo: arquitectura contemporánea <br>
+        - Servicios: salas de lectura y tecnología <br>
+        - Ambiente: espacio cultural y educativo
+        <a href="ipr_tu.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="b6fa7199fee207e3d322416c04bb6922.png" alt="Parque Cuscatlán">
+      <div class="nombre">Parque Cuscatlán</div>
+      <div class="info">
+        - Ubicación: San Salvador <br>
+        - Tipo: parque urbano <br>
+        - Actividades: recreación y eventos culturales <br>
+        - Atractivo: monumentos y áreas verdes <br>
+        - Servicios: espacios familiares y deportivos
+        <a href="ipr_tu.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

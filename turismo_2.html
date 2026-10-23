@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zonas de Montaña - SV travel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #4caf50, #2e7d32); 
+      color: #333;
+      padding-bottom: 40px;
+    }
+
+    .btn-regresar {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px 15px;
+      background: #795548; 
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+      z-index: 100;
+    }
+    .btn-regresar:hover { background: #5d4037; }
+
+    .titulo {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #fff;
+      padding: 0 15px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      background: #fff;
+    }
+    .card:hover { transform: scale(1.03); }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 4px solid #8bc34a; 
+    }
+
+    .card .nombre {
+      text-align: center;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(255,255,255,0.9);
+      color: #2e7d32;
+      font-size: 1.2em;
+    }
+
+    .card .info {
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      text-align: left;
+      padding: 0 15px;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      font-size: 0.95em;
+    }
+    .card:hover .info {
+      max-height: 300px;
+      padding: 15px;
+    }
+
+    .btn-reservar {
+      display: block;
+      margin-top: 10px;
+      padding: 8px;
+      background: #8bc34a;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .btn-reservar:hover {
+      background: #689f38;
+    }
+
+    /* Adaptación para teléfonos */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .titulo {
+        font-size: 1.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+  <a href="pagina_principal.html" class="btn-regresar">Regresar</a>
+
+  <div class="titulo">Bienvenidos a la zona de montaña</div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="R (2).jpg" alt="Cerro El Pital">
+      <div class="nombre">Cerro El Pital</div>
+      <div class="info">
+        - Ubicación: Chalatenango <br>
+        - Altura: 2,730 msnm <br>
+        - Clima: frío y neblinoso <br>
+        - Actividades: senderismo y camping <br>
+        - Atractivo: punto más alto de El Salvador
+        <a href="ipr_tm.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="CerroVerde1.jpg" alt="Cerro Verde">
+      <div class="nombre">Cerro Verde</div>
+      <div class="info">
+        - Ubicación: Santa Ana <br>
+        - Parque nacional <br>
+        - Actividades: caminatas y miradores <br>
+        - Flora: bosque nuboso <br>
+        - Atractivo: vistas de Izalco y Santa Ana
+        <a href="ipr_tm.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/OIP.webp
+        " alt="Volcán de Santa Ana">
+      <div class="nombre">Volcán de Santa Ana</div>
+      <div class="info">
+        - Ubicación: Santa Ana <br>
+        - Altura: 2,381 msnm <br>
+        - Cráter con lago verde <br>
+        - Actividades: ascenso guiado <br>
+        - Atractivo: vistas panorámicas
+        <a href="ipr_tm.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="maxresdefault.jpg" alt="Peña Blanca">
+      <div class="nombre">Peña Blanca</div>
+      <div class="info">
+        - Ubicación: Chalatenango <br>
+        - Altura: 1,800 msnm <br>
+        - Actividades: senderismo <br>
+        - Clima: fresco todo el año <br>
+        - Atractivo: miradores naturales
+        <a href="ipr_tm.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="R (3).jpg" alt="La Palma">
+      <div class="nombre">La Palma</div>
+      <div class="info">
+        - Ubicación: Chalatenango <br>
+        - Reconocida por: artesanías <br>
+        - Ambiente: cultural y montañoso <br>
+        - Actividades: turismo rural <br>
+        - Atractivo: legado de Fernando Llort
+        <a href="ipr_tm.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="apaneca-01.jpg" alt="Mirador de Apaneca">
+      <div class="nombre">Mirador de Apaneca</div>
+      <div class="info">
+        - Ubicación: Ahuachapán <br>
+        - Altura: 1,470 msnm <br>
+        - Actividades: canopy y senderismo <br>
+        - Clima: fresco y agradable <br>
+        - Atractivo: vistas de cafetales
+        <a href="ipr_tm.html" class="btn-reservar">Reservar Tour</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
